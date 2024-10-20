@@ -1,0 +1,56 @@
+/* Basic reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Body and general styles */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #e0f7fa; /* Light blue background */
+	color: #00796b; /* Dark cyan font color */
+	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* Container styles */
+.container {
+	max-width: 500px;
+	padding: 20px;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.5rem;
+	color: #01579b; /* Deep blue */
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1.5rem;
+	color: #00796b; /* Dark cyan */
+}
+
+/* Button styles */
+button {
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	color: white;
+	background-color: #0288d1; /* Blue */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 20px;
+}
+
+button:hover {
+	background-color: #0277bd; /* Slightly darker blue */
+}
