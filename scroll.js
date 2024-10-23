@@ -7,6 +7,7 @@ const hiddenButtonContainer = document.getElementById(
 const mainHeader = document.getElementById("main-header");
 
 let headerVisible = true;
+let maxScrollTop = 0;
 
 // Listen for scroll events on the container
 scrollContainer.addEventListener("scroll", function () {
@@ -18,10 +19,14 @@ scrollContainer.addEventListener("scroll", function () {
 		scrollContent.style.height = scrollContent.clientHeight + 100 + "px"; // Extending content height
 	}
 
+	// Update maxScrollTop if the current scrollTop is greater than the previous max
+	if (scrollTop > maxScrollTop) {
+		maxScrollTop = scrollTop;
+	}
+
 	// Show hidden button and move page down when scrolled up
 	if (scrollTop < 1) {
-		scrollContent.style.height = scrollContent.clientHeight + 100 + "px"; // Adding space
-		hiddenButtonContainer.style.display = "block"; // Reveal button in the added space
+		hiddenButtonContainer.style.display = "block"; // Reveal button
 	} else {
 		hiddenButtonContainer.style.display = "none";
 	}
@@ -39,7 +44,8 @@ scrollContainer.addEventListener("scroll", function () {
 
 	// Update pixel scrolled distance
 	document.getElementById("scroll-distance").textContent =
-		"Scrolled: " + scrollTop + "px";
+		"Scrolled: " + maxScrollTop + "px";
+	localStorage.setItem("scrollPosition", maxScrollTop);
 });
 
 // Button to navigate to the next page
