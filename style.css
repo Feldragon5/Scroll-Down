@@ -32,7 +32,19 @@
     padding: 10px;
     color: #00796b; /* Dark cyan */
   }
-  
+
+  /* Scroll distance display */
+  #scroll-distance {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #0288d1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
   /* Scroll container and content */
   #scroll-container {
     position: relative;
