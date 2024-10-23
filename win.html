@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>You Win!</title>
-    <link rel="stylesheet" type="text/css" href="win.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>Congratulations!</h1>
-        <p>You win!</p>
-        <p>Nice scrolling.</p>
-        <button onclick="celebrate()">Celebrate</button>
-    </div>
-    <script>
-        function celebrate() {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
-    </script>
-</body>
+	<head>
+		<title>You Win!</title>
+		<link rel="stylesheet" type="text/css" href="win.css" />
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Congratulations!</h1>
+			<p>You win!</p>
+			<p>Nice scrolling.</p>
+			<p id="scroll-distance-text">You scrolled 0 pixels.</p>
+			<button onclick="celebrate()">Celebrate</button>
+		</div>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				console.log(`test`);
+			});
+			document.addEventListener("DOMContentLoaded", function () {
+				const scrollPosition =
+					localStorage.getItem("scrollPosition") || 0;
+				document.getElementById(
+					"scroll-distance-text"
+				).textContent = `You scrolled ${scrollPosition} pixels.`;
+			});
+
+			function celebrate() {
+				confetti({
+					particleCount: 100,
+					spread: 70,
+					origin: { y: 0.6 },
+				});
+			}
+		</script>
+	</body>
 </html>
