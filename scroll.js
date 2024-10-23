@@ -5,10 +5,8 @@ const hiddenButtonContainer = document.getElementById(
 	"hidden-button-container"
 );
 const mainHeader = document.getElementById("main-header");
-const scrollDistanceDisplay = document.getElementById("scroll-distance");
 
 let headerVisible = true;
-let totalScrolledPixels = 0;
 
 // Listen for scroll events on the container
 scrollContainer.addEventListener("scroll", function () {
@@ -40,8 +38,8 @@ scrollContainer.addEventListener("scroll", function () {
 	}
 
 	// Update pixel scrolled distance
-	totalScrolledPixels = scrollTop;
-	scrollDistanceDisplay.textContent = `Scrolled: ${totalScrolledPixels}px`;
+	document.getElementById("scroll-distance").textContent =
+		"Scrolled: " + pixelsScrolled;
 });
 
 // Button to navigate to the next page
