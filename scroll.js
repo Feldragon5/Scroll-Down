@@ -39,7 +39,7 @@ scrollContainer.addEventListener("scroll", function () {
 
 	// Update pixel scrolled distance
 	document.getElementById("scroll-distance").textContent =
-		"Scrolled: " + pixelsScrolled;
+		"Scrolled: " + scrollTop;
 });
 
 // Button to navigate to the next page
