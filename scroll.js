@@ -21,7 +21,7 @@ scrollContainer.addEventListener("scroll", function () {
 
 	// Update maxScrollTop if the current scrollTop is greater than the previous max
 	if (scrollTop > maxScrollTop) {
-		maxScrollTop = scrollTop;
+		maxScrollTop = Math.round(scrollTop);
 	}
 
 	// Show hidden button and move page down when scrolled up
